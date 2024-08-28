@@ -1,6 +1,5 @@
 import tkinter as tk
-from datetime import datetime, timedelta
-from tkinter import PhotoImage, messagebox
+from tkinter import PhotoImage
 
 
 def criate():
