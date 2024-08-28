@@ -1,5 +1,17 @@
 import tkinter as tk
 from tkinter import PhotoImage
+import requests
+
+def check_version():
+    try:
+        response = requests.get('https://nome-do-seu-servico.onrender.com/api/version')
+        if response.status_code == 200:
+            version_info = response.json()
+            print(f"Versão Atual: {version_info['version']}")
+        else:
+            print("Erro ao verificar a versão.")
+    except Exception as e:
+        print(f"Erro na conexão com a API: {e}")
 
 
 def criate():
