@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import PhotoImage
 import requests
 
+
+# Função para chamar a API de criar pastas de cliente
 def check_version():
     try:
         response = requests.get('https://nome-do-seu-servico.onrender.com/api/version')
@@ -14,17 +16,50 @@ def check_version():
         print(f"Erro na conexão com a API: {e}")
 
 
+
+# Função para chamar a API de importar notas de serviço
+
+
+
+
 def criate():
-    print('pasta criada')
+    try:
+        response = requests.post('https://teste-api-ndzk.onrender.com/api/download')
+        if response.status_code == 200:
+            data = response.json()
+            print(data['message'])
+        else:
+            print("Erro ao iniciar o download.")
+    except Exception as e:
+        print(f"Erro na conexão com a API: {e}")
 
 def import_serv():
-    print('Importada')
+    try:
+        response = requests.post('https://teste-api-ndzk.onrender.com/api/download')
+        if response.status_code == 200:
+            data = response.json()
+            print(data['message'])
+        else:
+            print("Erro ao importar notas de serviço.")
+    except Exception as e:
+        print(f"Erro na conexão com a API: {e}")
 
+# Função para chamar a API de download de notas de serviço
 def download():
-    print('baixando')
+    try:
+        response = requests.post('https://teste-api-ndzk.onrender.com/api/download')
+        if response.status_code == 200:
+            data = response.json()
+            print(data['message'])
+        else:
+            print("Erro ao iniciar o download.")
+    except Exception as e:
+        print(f"Erro na conexão com a API: {e}")
+
 
 def fechar_janela():
     print('janela fechada')
+    root.destroy()
 
 ###     INTERFACE       ###
 root = tk.Tk()
